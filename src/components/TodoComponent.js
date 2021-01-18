@@ -30,8 +30,7 @@ function DisplayTODO(props) {
   };
 
   const handleUpdate = (index, todo) => {
-    toggle();
-    setState({ ...state, index: index, todo: todo });
+    setState({ ...state, modal: true, index: index, todo: todo });
   };
 
   const handleDelete = (index) => {
@@ -111,7 +110,7 @@ function DisplayTODO(props) {
               <button
                 type="button"
                 className="btn btn-secondary"
-                onChange={() => handleUpdate(index, todo)}
+                onClick={() => handleUpdate(index, todo)}
               >
                 Edit
               </button>

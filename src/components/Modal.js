@@ -10,9 +10,6 @@ const Modal = ({ handleClose, show, children }) => {
           &times;
         </span>
         {children}
-        {/* <a className="modal-close" onClick={handleClose}>
-          close
-        </a> */}
       </div>
     </div>
   );

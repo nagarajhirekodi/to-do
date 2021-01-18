@@ -17,7 +17,15 @@ function TodoForm({ addTodo, index, todo }) {
     });
     let uniqBuckets = [...new Set(buckets)];
     setValue({ ...value, categoryList: uniqBuckets });
-  }, [bucketList]);
+    if (index) {
+      setValue({
+        ...value,
+        name: todo.text,
+        description: todo.description,
+        category: todo.category,
+      });
+    }
+  }, [bucketList, todo && todo.text]);
 
   const handleSubmit = (e) => {
     let newTodo = {
